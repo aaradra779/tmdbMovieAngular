@@ -1,9 +1,21 @@
+.todoList{
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 
   .form{
     display: flex;
     align-items: center;
     margin: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
 
     &__primary{
       display: flex;
@@ -11,26 +23,72 @@
       background-color: midnightblue;
       color: aliceblue;
       padding: 10px;
-      border: solid 1px;
+      // border: solid 1px;
       border-radius: 8px;
+      width: 10%;
 
     }
   }
+  .displayText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // margin-left: 20%;
+    // padding: 10px;
+
+    &__text{
+      font-size: 20px;
+      margin-right: 6em;
+    }
+
+    &__delete{
+      display: flex;
+      justify-content: space-around;
+      background-color: rgb(255, 53, 56);
+      color: aliceblue;
+      padding: 6px;
+      border: solid 1px;
+      border-radius: 8px;
+      cursor: pointer;
+      // width: 10%;
+
+    }
+
+    &__checked{
+      text-decoration: line-through;
+      margin-right: 6em;
+      font-size: 20px;
+
+  
+    }
+   
+   
+
+
+  }
+
+  input[type="checkbox"]{
+    margin: 10px;
+   
+  }
+
+
+
   input[type="text"] {
     border: solid 1px midnightblue;
     padding: 10px;
     border-radius: 8px;
     margin-right: 4px;
     display: inline-block;
-    width: 30%;
+    width: 50%;
   }
-  button {
-    padding: 10px;
-    border: solid 1px var(--primary-color);
-    background: var(--primary-color);
-    color: midnightblue;
-    border-radius: 8px;
-  }
+  // button {
+  //   padding: 10px;
+  //   border: solid 1px var(--primary-color);
+  //   background: var(--primary-color);
+  //   color: midnightblue;
+  //   border-radius: 8px;
+  // }
 //   @media (min-width: 500px) and (max-width: 768px) {
 //     .primary {
 //         grid-template-columns: repeat(2, 1fr);

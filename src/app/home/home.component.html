@@ -1,16 +1,42 @@
 
-    <p>Hello World</p>
-   
-        <form class="form" [formGroup] = 'input'>
-          <input type="text" placeholder="Filter by city" formControlName = 'firstname' />
-          <button class="form__primary" type="button">Search</button>
-         
-        </form>
+    <p class="todoList">My To-do List</p>
         <form class="form">
-          <input type="text" placeholder="Filter by city"  formControlName = 'lastname' />
-          <button class="form__primary" type="button">Next</button>
+          <input [(ngModel)]="inputText" placeholder="Enter Todo Item" name="first" type="text" />
+          <button class="form__primary" (click)="displayText()">Add</button>
+        </form>
+        <div *ngIf="todoList.length > 0">
+          <ul>
+           
+              <li class="displayText" *ngFor = 'let todoItem of todoList ; let i = index'>
+                <input type="checkbox" class="displayText__text"  [checked]="todoItem.checked" (click)="onCheck(i)"  />
+                <!-- <p [ngClass]= "todoItem.checked ?  'displayText__checked' : 'displayText__text' "  >{{ todoItem.displayedText }}</p> -->
+                <p [ngClass]="{displayText__checked : todoItem.checked, displayText__text : !todoItem.checked}" >{{ todoItem.displayedText }}</p>
+                <button class="displayText__delete" (click)="deleteText(i)">Delete</button> 
+              </li>
+     
+          </ul>
+        </div>
+
+
+        <button (click)="clickme()">Click me</button>
+        <!-- <input type="text"   (eventEmitter) = '$event' (click)="$event.target.select()" /> -->
+
+
+
     
-          </form>
+    
+     
+
+
+
+
+
+        
+
+
+
+
+
          
   
   
