@@ -22,7 +22,7 @@ export class ApisService {
   })
     const lastValue = await lastValueFrom(response)
     const request_token = lastValue.request_token
-    console.log(request_token, 'hahah')
+
 
     const url =
     'https://www.themoviedb.org/authenticate/' +
@@ -31,6 +31,28 @@ export class ApisService {
 
   window.open(url, '_self');
 };
+
+//  searchedMovie = `https://api.themoviedb.org/3/search/movie?query=${inputText}`
+ searchedMovie = `https://api.themoviedb.org/3/search/movie?query=`
+
+async fetchSearchedMovie(query: string) : Promise<any> {
+  if( !query || query.trim() === ''){
+
+    throw new Error('query parameter should not be empty string or null')
+
+  }
+  const response = this.http.get<any>(this.searchedMovie + query, {
+    headers :  {
+      Authorization : `Bearer ${environment.API_READ_ACCESS_TOKEN}` 
+    },
+
+  })
+  const lastValue = await lastValueFrom(response)
+  console.log(lastValue)
+
+}
+
+
     //return lastValueFrom(response)
 
 

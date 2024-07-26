@@ -3,6 +3,9 @@ import { Component, EventEmitter, input, Input, OnInit, Output } from '@angular/
 import { FormControl, FormGroup, ReactiveFormsModule, FormBuilder, NgForm, FormsModule} from '@angular/forms';
 import { find } from 'rxjs';
 import { ApisService } from '../apis.service';
+import { Router, RouterModule } from '@angular/router';
+
+
 
 
 interface TodoItem {
@@ -17,17 +20,18 @@ interface TodoItem {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ FormsModule, CommonModule],
+  imports: [ FormsModule, CommonModule , RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
 
   data : any;
+  homeComponent: any
 
 
 
-  constructor(private apiService : ApisService) {
+  constructor(private apiService : ApisService , private router : Router) {
 
  
 
@@ -44,9 +48,9 @@ export class HomeComponent implements OnInit {
 
 
   inputText: string = '';
-  // displayedText: string | null = null;
   todoList : TodoItem[] = []
 
+  
 
   
   ngOnInit(): void {
@@ -94,6 +98,23 @@ export class HomeComponent implements OnInit {
 
 
   }
+
+  searchedText : string = ''
+ findsearchedMovie: string = ''
+
+
+
+
+
+
+  // searchMoive(){
+  //   this.router.navigate(['/searchList' , this.searchedText] )
+  //   console.log(this.searchedText)
+  //   // this.findsearchedMovie = this.searchedText
+
+  // }
+
+
 
 
 }

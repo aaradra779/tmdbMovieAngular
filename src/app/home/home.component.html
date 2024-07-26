@@ -17,8 +17,9 @@
 </div>
 
 <div class="searchbody">
-  <input type="text" class="searchbody__input">
-  <button class="searchbody__button">Search</button>
+  <input type="text" class="searchbody__input" [(ngModel)] = 'searchedText'>
+   <a [routerLink]="['/searchList']" [queryParams]="{q : searchedText}"><button class="searchbody__button"  >Search</button></a>  
+   <!-- <button [routerLink]="['/searchList' , searchedText]" class="searchbody__button" (click)="fetchSearchedMovie()" >Search</button> -->
 </div>
 
 <hr>
@@ -151,7 +152,7 @@
 
 
 
-
+<a [routerLink]="['/searchList', 0]">Next Page</a>
 
 
 
