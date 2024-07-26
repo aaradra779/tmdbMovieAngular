@@ -1,4 +1,162 @@
 
+<div class="navbar">
+  <div class="navbar__left">
+    MovieQuestDB
+  </div>
+
+  <div class="navbar__middle">
+    <div class="navbar__items">Tv Shows</div>
+    <div class="navbar__items">Movies</div>
+    <div class="navbar__items">Person</div>
+  </div>
+
+  <div class="navbar__right">
+      <button class="navbar__button" (click)="fetchData()">Login</button>
+  </div>
+
+</div>
+
+<div class="searchbody">
+  <input type="text" class="searchbody__input">
+  <button class="searchbody__button">Search</button>
+</div>
+
+<hr>
+
+
+<div class="trendingtoggle">
+  <h2 class="trendingtoggle__title">Trending</h2>
+  <button class="trendingtoggle__button">Today</button>
+  <button class="trendingtoggle__button">This Week</button>
+</div>
+
+
+<div class="today">
+  <ul class="today__list">
+    <div class="today__list">
+    
+        <li key={item.id} class="today__item">
+          <img
+            src="image"
+            alt=""
+            class="today__image"
+          />
+          <div class="today__title">title</div>
+          <div class="today__fact">
+            <div class="today__releasedate">date</div>
+
+          </div>
+        </li>
+  
+    </div>
+  </ul>
+</div>
+<div class="trendingtoggle">
+  <h2 class="trendingtoggle__title">What's Popular</h2>
+</div>
+
+
+<div class="today">
+  <ul class="today__list">
+    <div class="today__list">
+    
+        <li key={item.id} class="today__item">
+          <img
+            src="image"
+            alt=""
+            class="today__image"
+          />
+          <div class="today__title">title</div>
+          <div class="today__fact">
+            <div class="today__releasedate">date</div>
+
+          </div>
+        </li>
+  
+    </div>
+  </ul>
+</div>
+
+
+
+
+<footer class="footer">
+  <div class="footer__content">
+    <div class="footer__leftsection">
+      <p class="footer__title">MovieQuestDB</p>
+  
+        <button class="footer__button">
+          Hi 
+        </button>
+  
+        <button class="footer__button">Hi User!</button>
+
+    </div>
+
+    <div class="footer__links">
+      <div class="footer__list">
+        <h2 class="footer__itemsheading">RESOURCES</h2>
+        <ul>
+          <li>
+            <p class="footer__items">Home</p>
+          </li>
+
+          <li>
+            <p class="footer__items">About us</p>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__list">
+        <h2 class="footer__itemsheading">FOLLOW US</h2>
+        <ul>
+          <li>
+            <p class="footer__items">Git Hub</p>
+          </li>
+
+          <li>
+            <p class="footer__items">Discord</p>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__list">
+        <h2 class="footer__itemsheading">LEGAL</h2>
+        <ul>
+          <li>
+            <p class="footer__items">Privacy</p>
+          </li>
+
+          <li>
+            <p class="footer__items">Terms and Conditions</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer__copyright">
+    <hr class="footer__hr" />
+    <span class="footer__copyrightlink">
+      2024
+      <a
+        href="https://www.wikipedia.org/"
+      >
+        Wikipedia
+      </a>
+      .All Rights Reserved
+    </span>
+
+    <hr class="footer__hr" />
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
     <p class="todoList">My To-do List</p>
         <form class="form">
           <input [(ngModel)]="inputText" placeholder="Enter Todo Item" name="first" type="text" />
@@ -17,9 +175,19 @@
           </ul>
         </div>
 
+        <hr>
 
-        <button (click)="clickme()">Click me</button>
-        <!-- <input type="text"   (eventEmitter) = '$event' (click)="$event.target.select()" /> -->
+
+
+       
+
+
+       
+
+
+
+
+
 
 
 

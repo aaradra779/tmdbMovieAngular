@@ -2,12 +2,16 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, input, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, FormBuilder, NgForm, FormsModule} from '@angular/forms';
 import { find } from 'rxjs';
+import { ApisService } from '../apis.service';
+
 
 interface TodoItem {
   displayedText : string,
   checked : boolean,
 
 }
+
+
 
 
 @Component({
@@ -18,6 +22,26 @@ interface TodoItem {
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
+
+  data : any;
+
+
+
+  constructor(private apiService : ApisService) {
+
+ 
+
+  }
+  async fetchData(){
+    const response = await  this.apiService.fetchData()
+    console.log(response)
+  
+  }
+
+  
+
+
+
 
   inputText: string = '';
   // displayedText: string | null = null;
@@ -55,11 +79,7 @@ export class HomeComponent implements OnInit {
 
   @Output() eventEmitter = new EventEmitter();
 
-  clickme (){
-    this.eventEmitter.emit(7);
-    // console.log('clicked')  
-    
-  }
+  
   deleteText(index : number){
 
     this.todoList.splice(index, 1)
