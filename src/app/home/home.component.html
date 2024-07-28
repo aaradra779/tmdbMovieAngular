@@ -17,8 +17,14 @@
 </div>
 
 <div class="searchbody">
+
+    <h2 class="searchbody__heading">Welcome.</h2>
+
+  <h3 class="searchbody__subheading">
+    Explore the Movies and People you like.
+  </h3>
   <input type="text" class="searchbody__input" [(ngModel)] = 'searchedText'>
-   <a [routerLink]="['/searchList']" [queryParams]="{q : searchedText}"><button class="searchbody__button"  >Search</button></a>  
+   <a [routerLink]="['/searchList']" [queryParams]="{q : searchedText}"><button  type="submit"  class="searchbody__button"  >Search</button></a>  
    <!-- <button [routerLink]="['/searchList' , searchedText]" class="searchbody__button" (click)="fetchSearchedMovie()" >Search</button> -->
 </div>
 
@@ -34,17 +40,17 @@
 
 <div class="today">
   <ul class="today__list">
-    <div class="today__list">
+    <div *ngIf="trendingMovieResult" class="today__list">
     
-        <li key={item.id} class="today__item">
+        <li *ngFor='let item of trendingMovieResult.results' key={item.id} class="today__item">
           <img
-            src="image"
+            src="https://www.themoviedb.org/t/p//w1280/{{item.backdrop_path}}"
             alt=""
             class="today__image"
           />
-          <div class="today__title">title</div>
+          <div class="today__title">{{item.title}}</div>
           <div class="today__fact">
-            <div class="today__releasedate">date</div>
+            <div class="today__releasedate">{{item.release_date}}</div>
 
           </div>
         </li>
@@ -59,17 +65,18 @@
 
 <div class="today">
   <ul class="today__list">
-    <div class="today__list">
+    <div *ngIf="popularMovie" class="today__list">
     
-        <li key={item.id} class="today__item">
+        <li *ngFor="let item of popularMovie.results" key={item.id} class="today__item">
           <img
-            src="image"
+          src="https://www.themoviedb.org/t/p//w1280/{{item.backdrop_path}}"
+
             alt=""
             class="today__image"
           />
-          <div class="today__title">title</div>
+          <div class="today__title">{{item.title}}</div>
           <div class="today__fact">
-            <div class="today__releasedate">date</div>
+            <div class="today__releasedate">{{item.release_date}}</div>
 
           </div>
         </li>
@@ -152,7 +159,7 @@
 
 
 
-<a [routerLink]="['/searchList', 0]">Next Page</a>
+
 
 
 

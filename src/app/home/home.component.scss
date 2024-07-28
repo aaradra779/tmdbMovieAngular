@@ -189,8 +189,19 @@
 
   .searchbody{
     background-color: antiquewhite;
-    padding: 6em;
-    height: 20vh;
+    padding: 4em;
+    height: 40vh;
+
+    &__heading {
+      padding: 60px 0 0 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+     
+    }
+    &__subheading {
+      padding: 5px 0px 0 20px;
+      color: midnightblue;
+    }
    
 
     &__button{

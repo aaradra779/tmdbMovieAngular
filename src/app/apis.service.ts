@@ -49,11 +49,58 @@ async fetchSearchedMovie(query: string) : Promise<any> {
   })
   const lastValue = await lastValueFrom(response)
   console.log(lastValue)
+  return lastValue;
+
+  // console.log(lastValue)
+
 
 }
 
 
-    //return lastValueFrom(response)
+trendingMovie = 'https://api.themoviedb.org/3/trending/movie/day'
+
+async fetchTrendingMovie(): Promise<any>{
+  const response = this.http.get<any>(this.trendingMovie,{
+    headers :  {
+      Authorization : `Bearer ${environment.API_READ_ACCESS_TOKEN}` 
+    },
+  })
+
+  const lastValue = await lastValueFrom(response)
+  return lastValue;
+
+  // console.log(lastValue)
+
+
+  
+}
+
+popularMovie = 'https://api.themoviedb.org/3/movie/popular'
+
+async fetchPopularMovie(): Promise<any>{
+  const response = this.http.get<any>(this.popularMovie,{
+    headers :  {
+      Authorization : `Bearer ${environment.API_READ_ACCESS_TOKEN}` 
+    },
+  })
+
+  const lastValue = await lastValueFrom(response)
+  return lastValue;
+
+  // console.log(lastValue)
+
+
+  
+}
+
+
+
+
+
+
+
+
+  
 
 
   }

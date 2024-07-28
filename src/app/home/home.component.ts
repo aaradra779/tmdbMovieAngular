@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
   }
   async fetchData(){
     const response = await  this.apiService.fetchData()
-    console.log(response)
+    // console.log(response)
   
   }
 
@@ -49,6 +49,9 @@ export class HomeComponent implements OnInit {
 
   inputText: string = '';
   todoList : TodoItem[] = []
+  trendingMovieResult:  any 
+  popularMovie: any
+ 
 
   
 
@@ -59,6 +62,18 @@ export class HomeComponent implements OnInit {
     if(storedData){
       this.todoList = JSON.parse(storedData)
     }
+
+    this.apiService.fetchTrendingMovie().then((response) =>{
+      this.trendingMovieResult = response
+      // console.log(this.trendingMovieResult)
+    })
+    this.apiService.fetchPopularMovie().then((response) =>{
+      this.popularMovie = response
+      // console.log(this.trendingMovieResult)
+    })
+
+
+
 
     
   }
