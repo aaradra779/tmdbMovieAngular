@@ -1,5 +1,7 @@
 
 
+
+
 <app-nav-bar></app-nav-bar>
 
 <div class="searchbody">
@@ -19,11 +21,11 @@
 
 <div class="trendingtoggle">
   <h2 class="trendingtoggle__title">Trending</h2>
-  <button class="trendingtoggle__button">Today</button>
-  <button class="trendingtoggle__button">This Week</button>
+  <button [ngClass]="{trendingtoggle__button : activeButton === movieFilter.day, trendingtoggle__inactive : activeButton !== movieFilter.day}" (click)="click(movieFilter.day)">Today</button>
+  <button [ngClass]="{trendingtoggle__button : activeButton === movieFilter.week, trendingtoggle__inactive : activeButton !== movieFilter.week}" (click)="click(movieFilter.week)" >This Week</button>
 </div>
 
-<app-movie-list-on-home [movie]="trendingMovieResult" ></app-movie-list-on-home>
+<app-movie-list-on-home [movie]="response" ></app-movie-list-on-home>
 
 <div class="trendingtoggle">
   <h2 class="trendingtoggle__title">What's Popular</h2>

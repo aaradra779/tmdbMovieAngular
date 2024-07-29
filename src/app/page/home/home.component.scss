@@ -195,6 +195,17 @@
       height: 42px;
     }
 
+    &__inactive{
+      background-color: aliceblue;
+      color: midnightblue;
+      margin-right: 12px;
+      padding: 10px 20px 10px 20px;
+      border: solid 1px;
+      border-radius: 8px;
+      cursor: pointer;
+      height: 42px;
+    }
+
 
 
   }
@@ -205,6 +216,8 @@
   a{
     text-decoration: none;
   }
+
+
 
 
 

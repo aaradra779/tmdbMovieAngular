@@ -57,10 +57,10 @@ async fetchSearchedMovie(query: string) : Promise<any> {
 }
 
 
-trendingMovie = 'https://api.themoviedb.org/3/trending/movie/day'
+trendingMovie = 'https://api.themoviedb.org/3/trending/movie/'
 
-async fetchTrendingMovie(): Promise<any>{
-  const response = this.http.get<any>(this.trendingMovie,{
+async fetchTrendingMovie(type : string): Promise<any>{
+  const response = this.http.get<any>(this.trendingMovie + type,{
     headers :  {
       Authorization : `Bearer ${environment.API_READ_ACCESS_TOKEN}` 
     },

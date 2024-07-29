@@ -11,7 +11,7 @@ import { SearchlistPageComponent } from './page/searchlist-page/searchlist-page.
   imports: [HomeComponent, RouterModule, SearchlistPageComponent],
   template: `
  
- 
+  
       <router-outlet></router-outlet>
 
 
