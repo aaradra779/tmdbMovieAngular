@@ -15,7 +15,7 @@
 <div class="results">
   <ul *ngIf="results" class="results__list">
    
-    
+    <a [routerLink]="['/details']">
         <li *ngFor= 'let item of results.results' key={item.id} class="results__items">
           <img
             src= "https://www.themoviedb.org/t/p//w1280/{{item.backdrop_path}}"
@@ -30,6 +30,7 @@
          
           </div>
         </li>
+      </a>
      
  
   </ul>

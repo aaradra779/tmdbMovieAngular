@@ -2,8 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, input, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, FormBuilder, NgForm, FormsModule} from '@angular/forms';
 import { find } from 'rxjs';
-import { ApisService } from '../apis.service';
+import { ApisService } from '../../apis.service';
 import { Router, RouterModule } from '@angular/router';
+import { DetailsPageComponent } from '../../component/details-page/details-page.component';
+import { NavBarComponent } from '../../component/nav-bar/nav-bar.component';
+import { MovieListOnHomeComponent } from '../../component/movie-list-on-home/movie-list-on-home.component';
+import { FooterComponent } from '../../component/footer/footer.component';
 
 
 
@@ -20,11 +24,13 @@ interface TodoItem {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ FormsModule, CommonModule , RouterModule],
-  templateUrl: './home.component.html',
+  imports: [ FormsModule, CommonModule , RouterModule, NavBarComponent, MovieListOnHomeComponent, FooterComponent],
+  templateUrl: `./home.component.html` ,
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
+
+  
 
   data : any;
   homeComponent: any
@@ -36,11 +42,9 @@ export class HomeComponent implements OnInit {
  
 
   }
-  async fetchData(){
-    const response = await  this.apiService.fetchData()
-    // console.log(response)
-  
-  }
+
+
+ 
 
   
 
@@ -68,10 +72,13 @@ export class HomeComponent implements OnInit {
       // console.log(this.trendingMovieResult)
     })
     this.apiService.fetchPopularMovie().then((response) =>{
-      this.popularMovie = response
-      // console.log(this.trendingMovieResult)
-    })
+        this.popularMovie = response
+        // console.log(this.trendingMovieResult)
+      })
 
+
+
+    
 
 
 

@@ -1,0 +1,20 @@
+<div class="today">
+    <ul class="today__list">
+      <div  *ngIf="movie" class="today__list">
+      
+          <li *ngFor='let item of movie.results' key={item.id} class="today__item">
+            <img
+              src="https://www.themoviedb.org/t/p//w1280/{{item.backdrop_path}}"
+              alt=""
+              class="today__image"
+            />
+            <div class="today__title">{{item.title}}</div>
+            <div class="today__fact">
+              <div class="today__releasedate">{{item.release_date}}</div>
+  
+            </div>
+          </li>
+    
+      </div>
+    </ul>
+  </div>

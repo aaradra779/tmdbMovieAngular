@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { ApisService } from '../apis.service';
+import { ApisService } from '../../apis.service';
 import { CommonModule } from '@angular/common';
 
 

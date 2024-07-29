@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import { SearchlistPageComponent } from './searchlist-page/searchlist-page.component';
+import {HomeComponent} from './page/home/home.component';
+import { SearchlistPageComponent } from './page/searchlist-page/searchlist-page.component';
 
 
 

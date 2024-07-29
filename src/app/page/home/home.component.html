@@ -1,0 +1,87 @@
+
+
+<app-nav-bar></app-nav-bar>
+
+<div class="searchbody">
+
+    <h2 class="searchbody__heading">Welcome.</h2>
+
+    <h3 class="searchbody__subheading">
+    Explore the Movies and People you like.
+    </h3>
+    <input type="text" class="searchbody__input" [(ngModel)] = 'searchedText'>
+    <a [routerLink]="['/searchList']" [queryParams]="{q : searchedText}"><button  type="submit"  class="searchbody__button"  >Search</button></a>  
+   <!-- <button [routerLink]="['/searchList' , searchedText]" class="searchbody__button" (click)="fetchSearchedMovie()" >Search</button> -->
+</div>
+
+<hr>
+
+
+<div class="trendingtoggle">
+  <h2 class="trendingtoggle__title">Trending</h2>
+  <button class="trendingtoggle__button">Today</button>
+  <button class="trendingtoggle__button">This Week</button>
+</div>
+
+<app-movie-list-on-home [movie]="trendingMovieResult" ></app-movie-list-on-home>
+
+<div class="trendingtoggle">
+  <h2 class="trendingtoggle__title">What's Popular</h2>
+</div>
+
+<app-movie-list-on-home [movie]="popularMovie" ></app-movie-list-on-home>
+
+
+<app-footer></app-footer>
+
+ <p class="todoList">My To-do List</p>
+   <form class="form">
+          <input [(ngModel)]="inputText" placeholder="Enter Todo Item" name="first" type="text" />
+          <button class="form__primary" (click)="displayText()">Add</button>
+  </form>
+  <div *ngIf="todoList.length > 0">
+    <ul>
+           
+              <li class="displayText" *ngFor = 'let todoItem of todoList ; let i = index'>
+                <input type="checkbox" class="displayText__text"  [checked]="todoItem.checked" (click)="onCheck(i)"  />
+                <!-- <p [ngClass]= "todoItem.checked ?  'displayText__checked' : 'displayText__text' "  >{{ todoItem.displayedText }}</p> -->
+                <p [ngClass]="{displayText__checked : todoItem.checked, displayText__text : !todoItem.checked}" >{{ todoItem.displayedText }}</p>
+                <button class="displayText__delete" (click)="deleteText(i)">Delete</button> 
+              </li>
+     
+     </ul>
+   </div>
+   <hr>
+
+
+
+       
+
+
+       
+
+
+
+
+
+
+
+
+    
+    
+     
+
+
+
+
+
+        
+
+
+
+
+
+         
+  
+  
+

@@ -1,0 +1,230 @@
+
+// :root{
+//   margin: 0px;
+// }
+
+
+.todoList{
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+  .form{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+
+    &__primary{
+      display: flex;
+      justify-content: space-around;
+      background-color: midnightblue;
+      color: aliceblue;
+      padding: 10px;
+      // border: solid 1px;
+      border-radius: 8px;
+      width: 10%;
+
+    }
+  }
+  .displayText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // margin-left: 20%;
+    // padding: 10px;
+
+    &__text{
+      font-size: 20px;
+      margin-right: 6em;
+    }
+
+    &__delete{
+      display: flex;
+      justify-content: space-around;
+      background-color: rgb(255, 53, 56);
+      color: aliceblue;
+      padding: 6px;
+      border: solid 1px;
+      border-radius: 8px;
+      cursor: pointer;
+      // width: 10%;
+
+    }
+
+    &__checked{
+      text-decoration: line-through;
+      margin-right: 6em;
+      font-size: 20px;
+
+  
+    }
+   
+   
+
+
+  }
+
+  input[type="checkbox"]{
+    margin: 10px;
+   
+  }
+
+  input[type="text"] {
+    border: solid 1px midnightblue;
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 4px;
+    display: inline-block;
+    width: 80%;
+  }
+  input[type="password"] {
+    border: solid 1px midnightblue;
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 4px;
+    display: inline-block;
+    width: 50%;
+  }
+
+
+
+  .loginForm{
+    display: block;
+    padding: 20px;
+ 
+
+    &__title{
+      padding: 16px;
+      background-color: midnightblue;
+      color: aliceblue;
+      // border-radius: 8px;
+      margin-bottom: 10px;
+      // align-items: center;
+      // justify-content: center;
+      // display: flex;
+
+    }
+
+    &__username{
+      margin-bottom: 10px;
+     
+    }
+    &__password{
+      margin-bottom: 10px;
+    }
+
+    &__button{
+      display: flex;
+      background-color: midnightblue;
+      color: aliceblue;
+      padding: 10px 20px 10px 20px;
+      border: solid 1px;
+      border-radius: 8px;
+      cursor: pointer;
+      
+    
+
+    }
+
+  }
+
+
+  
+
+  .searchbody{
+    background-color: antiquewhite;
+    padding: 4em;
+    height: 40vh;
+
+    &__heading {
+      padding: 60px 0 0 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+     
+    }
+    &__subheading {
+      padding: 5px 0px 0 20px;
+      color: midnightblue;
+    }
+   
+
+    &__button{
+
+      background-color: midnightblue;
+      color: aliceblue;
+      padding: 10px 20px 10px 20px;
+      border: solid 1px;
+      border-radius: 8px;
+      cursor: pointer;
+     
+      
+
+    }
+
+
+   
+  }
+
+
+  .trendingtoggle{
+    display: flex;
+    align-items: center;
+    margin-top: 4em;
+
+    &__title
+    {
+      margin-right: 12px;
+    }
+    &__button{
+     margin-right: 12px;
+     background-color: midnightblue;
+      color: aliceblue;
+      padding: 10px 20px 10px 20px;
+      border: solid 1px;
+      border-radius: 8px;
+      cursor: pointer;
+      height: 42px;
+    }
+
+
+
+  }
+  
+
+  
+  
+  a{
+    text-decoration: none;
+  }
+
+
+
+  // button {
+  //   padding: 10px;
+  //   border: solid 1px var(--primary-color);
+  //   background: var(--primary-color);
+  //   color: midnightblue;
+  //   border-radius: 8px;
+  // }
+//   @media (min-width: 500px) and (max-width: 768px) {
+//     .primary {
+//         grid-template-columns: repeat(2, 1fr);
+//     }
+//     input[type="text"] {
+//         width: 70%;
+//     }   
+//   }
+//   @media (max-width: 499px) {
+//     .primary {
+//         grid-template-columns: 1fr;
+//     }    
+//   }
