@@ -60,12 +60,12 @@ export class HomeComponent implements OnInit {
 
   constructor(private apiService: ApisService, private router: Router) {}
 
+  searchedText: string = '';
   inputText: string = '';
   todoList: TodoItem[] = [];
   trendingMovieResult: any;
   popularMovie: any;
   response: string = '';
-  // text: string = '';
   movieFilter: typeof  MovieFilter = MovieFilter
   activeButton: MovieFilter = MovieFilter.day
 
@@ -76,16 +76,7 @@ export class HomeComponent implements OnInit {
     }
     this.click(this.movieFilter.day)
 
-    // this.apiService.fetchTrendingMovie(this.text).then((response) =>{
-    //   this.response  = response
-    //   console.log(response)
-    //   console.log('clicked')
-    // })
-
-    // this.apiService.fetchTrendingMovie().then((response) =>{
-    //   this.trendingMovieResult = response
-    //   // console.log(this.trendingMovieResult)
-    // })
+    
     this.apiService.fetchPopularMovie().then((response) => {
       this.popularMovie = response;
       // console.log(this.trendingMovieResult)
@@ -103,7 +94,7 @@ export class HomeComponent implements OnInit {
   }
 
   displayText() {
-    // this.displayedText = this.inputText;
+    
     if (this.inputText !== '') {
       const newTodoItem: TodoItem = {
         displayedText: this.inputText,
@@ -129,15 +120,9 @@ export class HomeComponent implements OnInit {
     localStorage.setItem('todoList', JSON.stringify(this.todoList));
   }
 
-  searchedText: string = '';
-  findsearchedMovie: string = '';
 
-  // searchMoive(){
-  //   this.router.navigate(['/searchList' , this.searchedText] )
-  //   console.log(this.searchedText)
-  //   // this.findsearchedMovie = this.searchedText
 
-  // }
+
 }
 
 function appendPx(value: string) {
