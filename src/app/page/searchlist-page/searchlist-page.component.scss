@@ -1,6 +1,19 @@
+
+.searchResults{
+  display: flex;
+ 
+}
+.filter{
+  flex: 2;
+  padding: 20px 0 0 20px;
+}
+
 .results {
+
+    flex: 6;
+
     display: block;
-    padding: 20px;
+    padding: 16px;
   
     
   

@@ -21,7 +21,6 @@ export class NavBarComponent {
 
   async fetchData(){
     const response = await  this.apiService.fetchData()
-    // console.log(response)
   
   }
 

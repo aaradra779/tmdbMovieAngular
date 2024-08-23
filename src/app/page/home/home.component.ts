@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import {
   Component,
   EventEmitter,
+  inject,
   input,
   Input,
   OnInit,
@@ -17,7 +18,7 @@ import {
 } from '@angular/forms';
 import { find } from 'rxjs';
 import { ApisService } from '../../apis.service';
-import { Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { DetailsPageComponent } from '../../component/details-page/details-page.component';
 import { NavBarComponent } from '../../component/nav-bar/nav-bar.component';
 import { MovieListOnHomeComponent } from '../../component/movie-list-on-home/movie-list-on-home.component';
@@ -39,6 +40,7 @@ export enum MovieFilter {
   selector: 'app-home',
   standalone: true,
   imports: [
+
     FormsModule,
     CommonModule,
     RouterModule,
@@ -68,14 +70,22 @@ export class HomeComponent implements OnInit {
   response: string = '';
   movieFilter: typeof  MovieFilter = MovieFilter
   activeButton: MovieFilter = MovieFilter.day
+  request: any
+  request_token : any
+
+
+client = 'https://api.themoviedb.org/3/authentication/session/new'
+  route : ActivatedRoute = inject(ActivatedRoute)
 
   ngOnInit(): void {
+  
     const storedData = localStorage.getItem('todoList');
     if (storedData) {
       this.todoList = JSON.parse(storedData);
     }
-    this.click(this.movieFilter.day)
 
+
+    this.click(this.movieFilter.day)
     
     this.apiService.fetchPopularMovie().then((response) => {
       this.popularMovie = response;
@@ -84,10 +94,9 @@ export class HomeComponent implements OnInit {
   }
 
   click(text: MovieFilter) {
-    console.log('clicked');
     this.apiService.fetchTrendingMovie(text).then((response) => {
       this.response = response;
-      console.log(response);
+      // console.log(response);
       this.activeButton = text
      
     });

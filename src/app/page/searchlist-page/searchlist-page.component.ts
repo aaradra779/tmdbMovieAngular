@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ApisService } from '../../apis.service';
 import { CommonModule } from '@angular/common';
+import { SearchFilterComponent } from '../../component/search-filter/search-filter.component';
 
 
 // interface resultList{
@@ -15,7 +16,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-searchlist-page',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, SearchFilterComponent],
   templateUrl: './searchlist-page.component.html',
   styleUrl: './searchlist-page.component.scss'
 })
@@ -43,6 +44,8 @@ export class SearchlistPageComponent implements OnInit {
 
 ngOnInit(): void {
 
+  
+
 
 
 this.route.queryParamMap.subscribe(params =>{
@@ -61,18 +64,10 @@ this.route.queryParamMap.subscribe(params =>{
       this.results = []
      })
 
-     
-  
-    
-    
-
-
     
   }
   
-  
  
-  
 }
 
 

@@ -1,15 +1,21 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { lastValueFrom, Observable } from 'rxjs';
 import { environment } from '../environments/environment';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
 })
+
+
+
+
 export class ApisService {
  
 
-  constructor( private  http : HttpClient ) {}
+  constructor( public  http : HttpClient ) {}
 
   apiUrl ='https://api.themoviedb.org/3/authentication/token/new'
     
@@ -31,6 +37,17 @@ export class ApisService {
 
   window.open(url, '_self');
 };
+
+
+
+
+
+
+
+
+
+
+
 
 //  searchedMovie = `https://api.themoviedb.org/3/search/movie?query=${inputText}`
  searchedMovie = `https://api.themoviedb.org/3/search/movie?query=`
