@@ -58,3 +58,58 @@
   a{
     text-decoration: none;
   }
+
+
+  .searchType{
+    // padding: 0 0 12px 0;
+    background-color: aliceblue;
+    border-radius: 8px;
+   
+
+
+    &__title{
+        background-color: midnightblue;
+        color: white;
+        padding: 12px;
+        border-radius: 8px 8px 0 0;
+        font-size: 20px;
+       
+    }
+
+    &__list{
+        list-style: none;
+        padding: 20px 0 20px 0;
+        margin: 0px;
+
+
+    }
+    &__item{
+        margin-bottom: 20px;
+        font-size: 18px;
+        padding: 12px;
+        background-color: cornflowerblue;
+        color: aliceblue;
+        cursor: pointer;
+
+    }
+
+    &__item:hover{
+        background-color: cornflowerblue;
+        color: aliceblue;
+        cursor: pointer;
+        
+    }
+
+
+
+    &__inactive{
+        margin-bottom: 20px;
+        font-size: 18px;
+        padding: 12px;
+        cursor: pointer;
+
+    }
+
+
+
+}

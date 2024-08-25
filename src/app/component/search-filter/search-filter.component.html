@@ -2,9 +2,9 @@
 
     <div class="searchType__title">Search Results</div>
     <ul class="searchType__list">
-        <li [ngClass]='{searchType__item : activeButton === searchType.movie , searchType__inactive : activeButton !== searchType.movie}' (click)="results(searchType.movie)">Movies</li>
-        <li [ngClass]='{searchType__item : activeButton === searchType.tvshow , searchType__inactive : activeButton !== searchType.tvshow}' (click)="results(searchType.tvshow)">Tv Show</li>
-        <li [ngClass]='{searchType__item : activeButton === searchType.person , searchType__inactive : activeButton !== searchType.person}' (click)="results(searchType.person)">Person</li>
+       <li [ngClass]='{searchType__item : activeButton === searchType.movie , searchType__inactive : activeButton !== searchType.movie}'  (click)="results(searchType.movie)">Movies</li>
+        <li [ngClass]='{searchType__item : activeButton === searchType.tvshow , searchType__inactive : activeButton !== searchType.tvshow}' (click)="results(searchType.tvshow )"  >Tv Show</li>
+        <li [ngClass]='{searchType__item : activeButton === searchType.person , searchType__inactive : activeButton !== searchType.person}' (click)="results(searchType.person )"  >Person</li>
     </ul>
 
 

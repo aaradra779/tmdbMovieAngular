@@ -11,6 +11,12 @@ import { SearchFilterComponent } from '../../component/search-filter/search-filt
 
 // }
 
+export enum SearchType {
+  movie = 'movie',
+  tvshow = 'tvshow',
+  person = 'person'
+}
+
 
 
 @Component({
@@ -26,8 +32,17 @@ export class SearchlistPageComponent implements OnInit {
   
   text: string = ''
   // lastValue: any;
-  results: any
+  movieResults: any
+  tvResults: any
+  personResults: any
   errorMessage : string = ''
+
+
+ 
+  searchType :typeof SearchType = SearchType
+  activeButton : SearchType = SearchType.movie
+  response : string = ''
+  type : string = ''
 
  
   
@@ -56,12 +71,36 @@ this.route.queryParamMap.subscribe(params =>{
   // console.log(this.text)
   if(this.text){
      this.apiService.fetchSearchedMovie(this.text).then((response) =>{
-      this.results = response;
-      console.log(this.results)
+      this.movieResults = response;
+      console.log(this.movieResults)
 
      }).catch((error)=>{
       this.errorMessage = error.message
-      this.results = []
+      this.movieResults = []
+     })
+
+    
+  }
+  if(this.text){
+     this.apiService.fetchSearchedTv(this.text).then((response) =>{
+      this.tvResults = response;
+      console.log(this.tvResults)
+
+     }).catch((error)=>{
+      this.errorMessage = error.message
+      this.tvResults = []
+     })
+
+    
+  }
+  if(this.text){
+     this.apiService.fetchSearchedPerson(this.text).then((response) =>{
+      this.personResults = response;
+      console.log(this.personResults)
+
+     }).catch((error)=>{
+      this.errorMessage = error.message
+      this.personResults = []
      })
 
     
@@ -69,6 +108,17 @@ this.route.queryParamMap.subscribe(params =>{
   
  
 }
+
+results(text : SearchType){
+
+  this.activeButton = text
+
+ }
+tvResult(text : SearchType){
+
+  this.activeButton = text
+  
+ }
 
 
 }

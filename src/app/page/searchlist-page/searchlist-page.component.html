@@ -10,20 +10,91 @@
     </div>
  </div> -->
 
- <p *ngIf="results">Total Results: {{results.total_results}}</p>
+ <p *ngIf="movieResults">Total Results: {{movieResults.total_results}}</p>
 
+
+ 
 
  <div class="searchResults">
 
   <div class="filter">
 
-    <app-search-filter></app-search-filter>
+    <div class="searchType">
+
+      <div class="searchType__title">Search Results</div>
+      <ul class="searchType__list">
+         <li [ngClass]='{searchType__item : activeButton === searchType.movie , searchType__inactive : activeButton !== searchType.movie}'  (click)="results(searchType.movie)">Movies</li>
+          <li [ngClass]='{searchType__item : activeButton === searchType.tvshow , searchType__inactive : activeButton !== searchType.tvshow}' (click)="results(searchType.tvshow )"  >Tv Show</li>
+          <li [ngClass]='{searchType__item : activeButton === searchType.person , searchType__inactive : activeButton !== searchType.person}' (click)="results(searchType.person )"  >Person</li>
+      </ul>
+    
+    
+    
+    </div>
   </div>
    <div class="results">
-     <ul *ngIf="results" class="results__list">
+
+    <div *ngIf="activeButton === searchType.tvshow || activeButton === searchType.movie || activeButton === searchType.person">
+
+      <li *ngFor= 'let item of (tvResults || movieResults || personResults).results' key={item.id} class="results__items">
+        <img
+          src= "https://www.themoviedb.org/t/p//w1280/{{item.backdrop_path}}"
+          alt=""
+          class="results__image"
+        />
+    
+        <div class="results__facts">
+          <h3 class="results__title"> {{item.title}}</h3>
+          <p class="results__releasedate">{{item.date}} </p>
+          <p class="results__overview">{{item.overview}}</p>
+       
+        </div>
+      </li>
+    
+     </div>
+    <!-- <div *ngIf="activeButton === searchType.movie">
+
+      <li *ngFor= 'let item of movieResults.results' key={item.id} class="results__items">
+        <img
+          src= "https://www.themoviedb.org/t/p//w1280/{{item.backdrop_path}}"
+          alt=""
+          class="results__image"
+        />
+    
+        <div class="results__facts">
+          <h3 class="results__title"> {{item.title}}</h3>
+          <p class="results__releasedate">{{item.date}} </p>
+          <p class="results__overview">{{item.overview}}</p>
+       
+        </div>
+      </li>
+    
+     </div>
+    <div *ngIf="activeButton === searchType.person">
+
+      <li *ngFor= 'let item of personResults.results' key={item.id} class="results__items">
+        <img
+          src= "https://www.themoviedb.org/t/p//w1280/{{item.backdrop_path}}"
+          alt=""
+          class="results__image"
+        />
+    
+        <div class="results__facts">
+          <h3 class="results__title"> {{item.title}}</h3>
+          <p class="results__releasedate">{{item.date}} </p>
+          <p class="results__overview">{{item.overview}}</p>
+       
+        </div>
+      </li>
+    
+     </div> -->
+
+
+
+     <!-- <ul *ngIf="movieResults" class="results__list">
       
        <a [routerLink]="['/details']">
-           <li *ngFor= 'let item of results.results' key={item.id} class="results__items">
+           <li *ngFor= 'let item of movieResults.results' key={item.id} class="results__items">
              <img
                src= "https://www.themoviedb.org/t/p//w1280/{{item.backdrop_path}}"
                alt=""
@@ -41,8 +112,13 @@
         
     
      </ul>
-   </div>
+   </div> -->
  </div>
+
+
+ 
+
+
 
 
 

@@ -65,7 +65,54 @@ async fetchSearchedMovie(query: string) : Promise<any> {
 
   })
   const lastValue = await lastValueFrom(response)
-  console.log(lastValue)
+  // console.log(lastValue)
+  return lastValue;
+
+  // console.log(lastValue)
+
+
+}
+ searchedTv = `https://api.themoviedb.org/3/search/tv?query=`
+
+async fetchSearchedTv(query: string) : Promise<any> {
+  if( !query || query.trim() === ''){
+
+    throw new Error('query parameter should not be empty string or null')
+
+  }
+  const response = this.http.get<any>(this.searchedTv + query, {
+    headers :  {
+      Authorization : `Bearer ${environment.API_READ_ACCESS_TOKEN}` 
+    },
+
+  })
+  const lastValue = await lastValueFrom(response)
+  // console.log(lastValue)
+  return lastValue;
+
+  // console.log(lastValue)
+
+
+}
+
+searchedPerson = `https://api.themoviedb.org/3/search/person?query=`
+
+
+
+async fetchSearchedPerson(query: string) : Promise<any> {
+  if( !query || query.trim() === ''){
+
+    throw new Error('query parameter should not be empty string or null')
+
+  }
+  const response = this.http.get<any>(this.searchedPerson + query, {
+    headers :  {
+      Authorization : `Bearer ${environment.API_READ_ACCESS_TOKEN}` 
+    },
+
+  })
+  const lastValue = await lastValueFrom(response)
+  // console.log(lastValue)
   return lastValue;
 
   // console.log(lastValue)
