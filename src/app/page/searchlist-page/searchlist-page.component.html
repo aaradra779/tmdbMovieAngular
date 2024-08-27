@@ -34,9 +34,9 @@
   </div>
    <div class="results">
 
-    <div *ngIf="activeButton === searchType.tvshow || activeButton === searchType.movie || activeButton === searchType.person">
+    <div *ngIf="activeButton === searchType.tvshow">
 
-      <li *ngFor= 'let item of (tvResults || movieResults || personResults).results' key={item.id} class="results__items">
+      <li *ngFor= 'let item of tvResults .results' key={item.id} class="results__items">
         <img
           src= "https://www.themoviedb.org/t/p//w1280/{{item.backdrop_path}}"
           alt=""
@@ -52,7 +52,7 @@
       </li>
     
      </div>
-    <!-- <div *ngIf="activeButton === searchType.movie">
+    <div *ngIf="activeButton === searchType.movie">
 
       <li *ngFor= 'let item of movieResults.results' key={item.id} class="results__items">
         <img
@@ -87,7 +87,7 @@
         </div>
       </li>
     
-     </div> -->
+     </div>
 
 
 
