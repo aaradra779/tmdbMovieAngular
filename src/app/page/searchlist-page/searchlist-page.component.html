@@ -44,8 +44,8 @@
         />
     
         <div class="results__facts">
-          <h3 class="results__title"> {{item.title}}</h3>
-          <p class="results__releasedate">{{item.date}} </p>
+          <h3 class="results__title"> {{item.name}}</h3>
+          <p class="results__releasedate">{{item.first_air_date}} </p>
           <p class="results__overview">{{item.overview}}</p>
        
         </div>
@@ -63,7 +63,7 @@
     
         <div class="results__facts">
           <h3 class="results__title"> {{item.title}}</h3>
-          <p class="results__releasedate">{{item.date}} </p>
+          <p class="results__releasedate">{{item.release_date}} </p>
           <p class="results__overview">{{item.overview}}</p>
        
         </div>
@@ -74,15 +74,15 @@
 
       <li *ngFor= 'let item of personResults.results' key={item.id} class="results__items">
         <img
-          src= "https://www.themoviedb.org/t/p//w1280/{{item.backdrop_path}}"
+          src= "https://www.themoviedb.org/t/p//w1280/{{item.profile_path}}"
           alt=""
           class="results__image"
         />
     
         <div class="results__facts">
-          <h3 class="results__title"> {{item.title}}</h3>
+          <h3 class="results__title"> {{item.name}}</h3>
           <p class="results__releasedate">{{item.date}} </p>
-          <p class="results__overview">{{item.overview}}</p>
+          <p class="results__overview">{{item.known_for_department}}</p>
        
         </div>
       </li>
